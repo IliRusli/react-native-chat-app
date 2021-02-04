@@ -9,9 +9,10 @@ import * as actionTypes from './actionTypes';
  * @param text
  * @returns {Function}
  */
-export const getMessage = (id?: number, text?: any): Function => async (
-  dispatch,
-) => {
+export const getMessage = (
+  id: number,
+  text?: any,
+): Function => async dispatch => {
   dispatch({
     type: actionTypes.GET_MESSAGE_START,
   });
@@ -54,6 +55,10 @@ export const getMessage = (id?: number, text?: any): Function => async (
     let message = await response.json();
     dispatch({type: actionTypes.GET_MESSAGE_SUCCESS, message});
   } catch (error) {
+    /**
+     * Sometimes we use up the free daily request limit,
+     * hence the error
+     */
     dispatch({
       type: actionTypes.GET_MESSAGE_FAIL,
       errorStatus:
@@ -67,7 +72,7 @@ export const getMessage = (id?: number, text?: any): Function => async (
  * @param message
  * @returns {Function}
  */
-export const sendMessage = (message: Message) => async (dispatch) => {
+export const sendMessage = (message: Message) => async dispatch => {
   if (message) {
     dispatch({type: actionTypes.SEND_MESSAGE_SUCCESS, message});
   } else {
@@ -82,7 +87,7 @@ export const sendMessage = (message: Message) => async (dispatch) => {
  * resetMessage clears all the messages
  * @returns {Function}
  */
-export const resetMessages = (): Function => (dispatch) => {
+export const resetMessages = (): Function => dispatch => {
   dispatch({
     type: actionTypes.RESET_MESSAGES,
   });

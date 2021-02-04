@@ -40,9 +40,21 @@ const ChatRoom = (props: Props) => {
   }, []);
 
   useEffect(() => {
-    // Display popup alert if there's error during sign in
     if (chatState.errorStatus) {
-      Alert.alert('', chatState.errorStatus, [{text: 'OK'}]);
+      /**
+       * Incase we hit the limit, send message manually
+       */
+      let message = {
+        _id: getRandomInt(),
+        text: 'We\'ve hit the daily limit of fakejson free quota',
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: 'John Smith',
+        },
+        sent: true,
+      };
+      props.sendMessage(message);
     }
   }, [chatState]);
 
