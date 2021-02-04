@@ -1,23 +1,20 @@
 # Chat Application
 
-
 ## About The Project
 
-A mock chat application using React Native, Redux and React Native Gifted Chat. The chat feature includes the ability to send and receive texts, images and pdf files.
+A mock chat application using React Native, Redux and React Native Gifted Chat. The chat feature includes the capability to send and receive texts, images and pdf files.
 
-Screenshot on iOS device: 
+Screenshot on iOS device:
 
-<img src="./src/images/image1.png">
-<img src="./src/images/image2.png">
-<img src="./src/images/image3.png">
-
+<img src="./src/images/image1.png" alt="iOS image 1" width="300" height="500">
+<img src="./src/images/image2.png" alt="iOS image 2" width="300" height="500">
+<img src="./src/images/image3.png" alt="iOS image 3" width="300" height="500">
 
 ### Built With
 
-* [React Native](https://reactnative.dev)
-* [Redux](https://redux.js.org)
-* [React Native Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
-
+- [React Native](https://reactnative.dev)
+- [Redux](https://redux.js.org)
+- [React Native Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
 
 ## Getting Started
 
@@ -25,11 +22,11 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* npm
+- npm
   ```sh
   npm install npm@latest -g
   ```
-* yarn
+- yarn
   ```sh
   npm install --global yarn
   ```
@@ -48,7 +45,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    yarn
    ```
-4. [iOS] Install pods 
+4. [iOS] Install pods
    ```sh
    cd ios && pod install && cd ..
    ```
