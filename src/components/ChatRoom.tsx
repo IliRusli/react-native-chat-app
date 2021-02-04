@@ -52,7 +52,10 @@ const ChatRoom = (props: Props) => {
    */
   const onSend = useCallback((messages = []) => {
     // Append the new message to the message list
-    props.sendMessage(messages[0]);
+    let message = messages[0];
+    message.sent = true;
+    message.received = true;
+    props.sendMessage(message);
 
     // Retrieve the dummy reply from the API
     props.getMessage(getRandomInt(), undefined);
@@ -193,7 +196,7 @@ const ChatRoom = (props: Props) => {
   return (
     <GiftedChat
       messages={messages}
-      onSend={(messages) => onSend(messages)}
+      onSend={messages => onSend(messages)}
       user={{
         _id: 1,
       }}
