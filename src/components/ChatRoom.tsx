@@ -46,7 +46,7 @@ const ChatRoom = (props: Props) => {
        */
       let message = {
         _id: getRandomInt(),
-        text: 'We\'ve hit the daily limit of fakejson free quota',
+        text: "We've hit the daily limit of fakejson free quota",
         createdAt: new Date(),
         user: {
           _id: 2,
@@ -121,6 +121,9 @@ const ChatRoom = (props: Props) => {
         }
 
         props.sendMessage(message);
+
+        // Retrieve the dummy reply from the API
+        props.getMessage(getRandomInt(), undefined);
       }
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
