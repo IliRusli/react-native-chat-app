@@ -75,8 +75,9 @@ const ChatRoom = (props: Props) => {
 
   /**
    * Actions for chat custom left toolbar
+   * @param props
    */
-  const onPressActionButton = async () => {
+  const onPressActionButton = async (actionProps: Actions['props']) => {
     // Pick multiple files
     try {
       const results = await DocumentPicker.pickMultiple({
@@ -87,7 +88,7 @@ const ChatRoom = (props: Props) => {
 
         let message: Message = {
           _id: getRandomInt(),
-          text: '',
+          text: actionProps.text,
           createdAt: new Date(),
           user: {
             _id: 1,
@@ -133,7 +134,7 @@ const ChatRoom = (props: Props) => {
       icon={() => <Icon name="attach" size={35} color={Colors.grey} />}
       options={{
         'Choose From Library': () => {
-          onPressActionButton();
+          onPressActionButton(props);
         },
         Cancel: () => {
           /**
