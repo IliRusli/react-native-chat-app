@@ -6,9 +6,11 @@ A mock chat application using React Native, Redux and React Native Gifted Chat. 
 
 Screenshot on iOS device:
 
-<img src="./src/images/image1.png" alt="iOS image 1" width="300" height="500">
-<img src="./src/images/image2.png" alt="iOS image 2" width="300" height="500">
-<img src="./src/images/image3.png" alt="iOS image 3" width="300" height="500">
+<p align="center" >
+<img src="./src/images/image1.png" alt="iOS image 1" width="300" height="550">
+<img src="./src/images/image2.png" alt="iOS image 2" width="300" height="550">
+<img src="./src/images/image3.png" alt="iOS image 3" width="300" height="550">
+</p>
 
 ### Built With
 
