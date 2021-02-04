@@ -55,6 +55,11 @@ To get a local copy up and running follow these simple steps.
    ```sh
    react-native run-ios OR react-native run-android
    ```
+6. Sign in the app (using dummy data)
+   ```sh
+   email: test@user.com
+   password: password
+   ```
 
 ## License
 
