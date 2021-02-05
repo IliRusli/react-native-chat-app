@@ -26,12 +26,11 @@ export const getMessage = (
     data: {
       _id: id,
       text: 'stringShort',
-      createdAt: 'dateNow',
+      createdAt: new Date(),
       user: {
         _id: 2,
         name: 'John Smith',
       },
-      sent: true,
     },
   };
 

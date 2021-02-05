@@ -9,6 +9,7 @@ import {ChatState} from '../models/ChatState';
 import {NavigationScreenProp, NavigationRoute} from 'react-navigation';
 import {ChatProps} from '../models/ChatProps';
 import {Message} from '../models/Message';
+import {renderSend, renderBubble} from './Chat';
 import Pdf from 'react-native-pdf';
 
 interface Props extends ChatProps {
@@ -72,18 +73,6 @@ const ChatRoom = (props: Props) => {
     // Retrieve the dummy reply from the API
     props.getMessage(getRandomInt(), undefined);
   }, []);
-
-  /**
-   * Set custom icon for chat composer send button
-   * @param props
-   */
-  const renderSend = (props: Send['props']) => {
-    return (
-      <Send {...props} containerStyle={styles.sendContainer}>
-        <Icon name="send" size={30} color={Colors.turquoise} />
-      </Send>
-    );
-  };
 
   /**
    * Actions for chat custom left toolbar
@@ -162,21 +151,6 @@ const ChatRoom = (props: Props) => {
   );
 
   /**
-   * Set custom appearance of the chat bubble
-   * @param props
-   */
-  const renderBubble = (props: Bubble['props']) => (
-    <Bubble
-      {...props}
-      wrapperStyle={{
-        left: {borderColor: Colors.turquoise, borderWidth: 2},
-        right: {backgroundColor: Colors.turquoise},
-      }}
-      usernameStyle={{color: Colors.darkGrey}}
-    />
-  );
-
-  /**
    * Pdf viewer modal for pdf file type
    * @param source
    */
@@ -218,9 +192,9 @@ const ChatRoom = (props: Props) => {
       }}
       inverted={false}
       alwaysShowSend
-      renderBubble={(props: Bubble['props']) => renderBubble(props)}
+      renderBubble={renderBubble}
       renderUsernameOnMessage
-      renderSend={(props: Send['props']) => renderSend(props)}
+      renderSend={renderSend}
       renderCustomView={(props: Bubble['props']) => renderCustomView(props)}
       renderActions={(props: Actions['props']) => renderActions(props)}
     />
